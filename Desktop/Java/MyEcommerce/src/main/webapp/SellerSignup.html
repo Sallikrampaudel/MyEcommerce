@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+<title></title>
+</head>
+<body>
+	<div class="main">
+		<div class="header">
+			<a href="index.html"> <img src="image/icon.png "
+				style="display: block; margin-left: auto; margin-right: auto;">
+			</a>
+		</div>
+		<div class="signup-outter-box">
+			<h1 class="create-account-sec">Create Account</h1>
+			<form action="/sellersignup"  method="GET" id="signup">
+				<label class="signin-page-label">First name:</label> <input
+					type="text" id="fname" class="input-box-signin" name="fname"
+					placeholder="First Name"> <span class="error_form"
+					id="fname_error_message"></span> <label class="signin-page-label">Last
+					name:</label> <input type="text" id="lname" name="lname"
+					class="input-box-signin" placeholder="Last Name"> <span
+					class="error_form" id="lname_error_message"></span> <label
+					class="signin-page-label">Email:</label> <input id="email"
+					class="input-box-signin" type="Email" maxlength="40" name="email"
+					placeholder="Email"> <span class="error_form"
+					id="email_error_message"></span> <label class="signin-page-label"
+					style="margin-top: 3px">Password:</label> <input id="password"
+					class="input-box-signin" type="Password" maxlength="40"
+					name="password" placeholder="Password"> <span
+					class="error_form" id="password_error_message"></span> <label
+					class="signin-page-label" style="margin-top: 3px">Retype
+					Password:</label> <input id="rpassword" class="input-box-signin"
+					type="Password" maxlength="40" name="rpassword"
+					placeholder="Retype Password"> <span class="error_form"
+					id="rpassword_error_message"></span> <input class="form-submit"
+					id="submit" type="submit" >
+			</form>
+			<div class="line"></div>
+			<div>
+				<p>
+					Already have an Account? <a href="SellerSignin.html">Sign-In</a>
+			</div>
+		</div>
+
+		<div class="footer">
+			<br>
+			<hr>
+			<div class="footer-content">
+
+				<a class="footerlink" href="#Condition">Condition of Use</a> <span
+					class="footer-span"></span> <a class="footerlink" href="#Condition">Privacy
+					Notice</a> <span class="footer-span"></span> <a class="footerlink"
+					href="#Condition">Help</a> <br>
+				<p class="copyright">© 1996-2020, Amazon.com, Inc. or its
+					affiliates</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<html>
+<head>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src="script/script.js"></script>
+	<link href="css/styles.css" rel="stylesheet" type="text/css">
+	
+	<title></title>
+	
+</head>
+<body>
+<div class="main">
+
+	<div class="header">
+		<a href="index.html">
+			<img src="image/icon.png" style="display: block; margin-left: auto; margin-right: auto;">
+		</a>
+	</div>
+	<div class="signin-main">
+		<div class="inside-box">
+			<h1 class="signin-head1">Sign-In</h1>
+			<form action="/authenticate" method="POST" id="signin">
+				<label class="signin-page-label">Email</label>
+				<input class="input-box-signin" id="email" type="Email" maxlength="40" name="email" placeholder="Email">
+				<span class="error_form" id="email_error_message"></span>
+				<label class="signin-page-label" style="margin-top: 3px">Password</label>
+				<input class="input-box-signin" id="signin-password" type="Password" maxlength="40" name="password" placeholder="Password">
+				<input class="form-submit" id="form-submit" name="submit" type="submit">
+			</form>
+			<div>
+				<a href="#forgotpassword" class="forgotpassword"><p>Forgot password?</p></a>
+			</div>
+			<div class="joinnow">
+				<h5 class="Newto">New to Amazon?</h5>
+			</div>
+			<div class="createaccount">
+				<button class="signupbutton">
+				<a href="signup.html" style="text-decoration:none;">Create Your Account</a>
+				</button>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<br>
+		<hr>
+		<div class="footer-content">
+			<a class="footerlink" href="#Condition">Condition of Use</a>
+			<span class="footer-span"></span>
+			<a class="footerlink"  href="#Condition">Privacy Notice</a>
+			<span class="footer-span"></span>
+			<a class="footerlink" href="#Condition">Help</a>
+			<br>
+			<p class="copyright"> © 1996-2020, Amazon.com, Inc. or its affiliates</p>
+		</div>
+	
+	</div>
+</div>
+</body>
+</html>
