@@ -33,17 +33,20 @@ public class SellerBean {
 		}
 		
 	}
-	public boolean authenticate(String email, String password) {
+	public SellerEntity authenticate(String email, String password) {
+		SellerEntity se=null;
 		if(email == null)
-			return false;
+			return se;
 		if(password ==null)
-			return false;
-		List<SellerEntity> seList=sr.findByEmailAndPassword(email,password);
-		if(seList.size() ==0)
-			return false;
-		if(seList.size() == 1)
-			return true;
-		
-		return false;
+			return se;
+		List<SellerEntity> seList1=sr.findByEmailAndPassword(email,password);
+
+		if(seList1.size()==1) {
+			System.out.println("1");
+			return se=seList1.get(0);
+		}else {			
+			System.out.println("2");
+			return se;
+		}
 	}
 }

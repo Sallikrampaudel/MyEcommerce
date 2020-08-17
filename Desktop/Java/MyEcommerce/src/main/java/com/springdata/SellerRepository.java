@@ -15,7 +15,6 @@ import org.springframework.transaction.annotation.Transactional;
 public interface SellerRepository  extends JpaRepository <SellerEntity, String>{
 	
 	public List<SellerEntity> findByEmail(String email);
-	
 	public List<SellerEntity> findByEmailAndPassword(String email,String password);
 
 //	@Transactional
@@ -23,6 +22,8 @@ public interface SellerRepository  extends JpaRepository <SellerEntity, String>{
 //	@Query("UPDATE UsersEntity u SET u.pwd=?2 WHERE u.uid= ?1")
 //	public void update(String users,String password);
 
+//	@Query("SELECT fname FROM SellerEntity s WHERE s.email= ?1 and s.password=?2")
+//	public String findByEmailAndPassword1(String email,String password);
 
 
 }

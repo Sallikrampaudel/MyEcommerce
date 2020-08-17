@@ -25,6 +25,13 @@ public class JPATest {
 		List<SellerEntity> li=sr.findByEmailAndPassword("java@g.com", "paudel");
 		assertEquals(1 , li.size());
 	}
+	@Test
+	public void fname() {
+		List<SellerEntity> li=sr.findByEmailAndPassword("java@g.com", "paudel");
+		System.out.println(li);
+		assertEquals("Salik", li);
+		
+	}
 	
 	@Test
 	public void invalidUidAndPwd() {
@@ -42,12 +49,13 @@ public class JPATest {
 	public void testCreateUser() {
 		SellerEntity seller= new SellerEntity();
 		
-		seller.setFname("test");
-		seller.setLname("tester");
-		seller.setEmail("test1@gmail.com");	
+		seller.setFname("test1");
+		seller.setLname("tester1");
+		seller.setEmail("test11@gmail.com");	
 		seller.setPassword("test123");
 		sr.save(seller);
-		List<SellerEntity>  seller1= sr.findByEmailAndPassword("tester@gmail.com","test123");
+		List<SellerEntity>  seller1= sr.findByEmailAndPassword("test11@gmail.com","test123");
 		assertEquals(1, seller1.size());
+		
 	}
 }

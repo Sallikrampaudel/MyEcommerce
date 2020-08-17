@@ -1,11 +1,18 @@
 package com.strut;
 
+
+import java.util.Map;
+
+import org.apache.struts2.dispatcher.SessionMap;
+import org.apache.struts2.interceptor.SessionAware;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.spring.SellerBean;
+import com.springdata.SellerEntity;
 
-public class SellerAction extends ActionSupport {
+public class SellerAction extends ActionSupport implements SessionAware {
 
 	/**
 	 * 
@@ -16,6 +23,15 @@ public class SellerAction extends ActionSupport {
 	private String email;
 	private String password;
 	private String rpassword;
+	private String button;
+	
+	public String getButton() {
+		return button;
+	}
+
+	public void setButton(String button) {
+		this.button = button;
+	}
 
 	public String getFname() {
 		return fname;
@@ -48,13 +64,25 @@ public class SellerAction extends ActionSupport {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	public String getRpassword() {
+		return rpassword;
+	}
+
+	public void setRpassword(String rpassword) {
+		this.rpassword = rpassword;
+	}
 
 	@Autowired
 	public SellerBean seller;
+	private SessionMap<String, Object> sessionMap;
+	
+	Map<String, Object> session;
 
 	public String register() {
 		boolean B = seller.register(fname, lname, email, password);
 		if (B == true) {
+			
 			return "success";
 		} else {
 			return "failure";
@@ -62,20 +90,31 @@ public class SellerAction extends ActionSupport {
 	}
 
 	public String authenticate() {
-		boolean B = seller.authenticate(email, password);
-		if (B == true) {
+		SellerEntity B = seller.authenticate(email, password);
+		System.out.println(B);
+		
+		if (B != null) {
+			System.out.println(B.getFname());
+			this.sessionMap = (SessionMap<String, Object>) ActionContext.getContext().getSession();
+			sessionMap.put("val", B.getFname());
 			return "success";
 		} else {
+		
 			return "failure";
 		}
 	}
 
-	public String getRpassword() {
-		return rpassword;
-	}
-
-	public void setRpassword(String rpassword) {
-		this.rpassword = rpassword;
+	public String logout(){  
+	    if(sessionMap!=null){  
+	        sessionMap.invalidate();  
+	    }  
+	    return "success";  
+	}  
+	
+	@Override
+	public void setSession(Map<String, Object> session) {
+		// TODO Auto-generated method stub
+		this.session=session;
 	}
 
 }

@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+
 <struts>
+
 	<constant name="struts.devMode" value="true" />
 	<constant name="struts.objectFactory" value="spring" />
 	<package name="default" extends="json-default">
 
+		
 		<action name="add2Cart" class="com.strut.CartAction" method="add">
 			<result name="success">loggedin.jsp</result> <!-- servlet webpage forward -->
 		</action> 
@@ -13,7 +16,7 @@
 			<interceptor-ref name="defaultStack" />
 			
 			<result name="success">loggedin.jsp</result> <!-- servlet webpage forward -->
-			<result type="redirect" name="failure">SellerSignup.jsp</result> <!-- servlet webpage redirect --> 
+			<result type="redirect" name="failure">SellerSignup.html</result> <!-- servlet webpage redirect --> 
 		</action> 
 		<action name="register" class="com.strut.SellerAction" method="register">
 			<result name="success">loggedin.jsp</result> <!-- servlet webpage forward --> 
